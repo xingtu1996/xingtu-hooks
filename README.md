@@ -8,6 +8,10 @@
 
 `xingtu-hooks` 是行途开源矩阵的**钩子资产仓**。聚合 AI 工程实践中打磨的 Claude Code hooks，按场景开箱即用。市面鲜有系统开源的 hooks 集合，这是差异化资产。
 
+## 🧩 DeepSeek Harness（DSH）兼容
+
+本仓 hooks 遵循 Claude Code 标准 hook 事件协议，DeepSeek Harness 的插件模型可消费同一类生命周期钩子（PreToolUse / PostToolUse / Stop 等），用于安全拦截、会话提醒与交付检视，无需改写。
+
 ## Hooks 清单
 
 | Hook | 说明 | 触发时机 |
