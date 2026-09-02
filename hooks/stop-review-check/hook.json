@@ -1,0 +1,6 @@
+{
+  "name": "stop-review-check",
+  "description": "会话停止前提醒交付检视（落盘验证/敏感检查/未完成项说明）",
+  "trigger": "Stop",
+  "output": "additionalContext"
+}

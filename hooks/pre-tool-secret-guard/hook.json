@@ -1,0 +1,6 @@
+{
+  "name": "pre-tool-secret-guard",
+  "description": "拦截对敏感文件（.env / 私钥 / 凭据）的 Edit/Write，密钥走环境变量",
+  "trigger": "PreToolUse(Edit|Write)",
+  "output": "block/allow JSON"
+}

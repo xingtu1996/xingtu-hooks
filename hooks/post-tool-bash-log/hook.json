@@ -1,0 +1,6 @@
+{
+  "name": "post-tool-bash-log",
+  "description": "Bash 命令执行结果记录，失败时提示检查报错",
+  "trigger": "PostToolUse(Bash)",
+  "output": "通知 JSON（不阻断）"
+}
