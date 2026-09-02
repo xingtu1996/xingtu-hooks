@@ -1,0 +1,6 @@
+{
+  "name": "session-start-reminder",
+  "description": "会话开始注入轻量工作提醒（≤500B 克制注入）",
+  "trigger": "SessionStart",
+  "output": "additionalContext"
+}
