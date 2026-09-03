@@ -2,7 +2,9 @@
 
 > 开箱即用的 Agent 钩子（hooks），覆盖安全拦截 / 会话提醒 / 交付检视。
 
-![MIT](https://img.shields.io/badge/license-MIT-green.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Hooks](https://img.shields.io/badge/hooks-4-blue.svg)
+![Target](https://img.shields.io/badge/target-Claude%20Code-orange.svg)
 
 ## 这是什么
 
