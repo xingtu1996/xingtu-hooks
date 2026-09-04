@@ -3,7 +3,7 @@
 > 开箱即用的 Agent 钩子（hooks），覆盖安全拦截 / 会话提醒 / 交付检视。
 
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Hooks](https://img.shields.io/badge/hooks-4-blue.svg)
+![Hooks](https://img.shields.io/badge/hooks-5-blue.svg)
 ![Target](https://img.shields.io/badge/target-Claude%20Code-orange.svg)
 
 ## 这是什么
@@ -52,3 +52,16 @@ cp -r hooks/<hook-name> .claude/hooks/
 ## 许可证
 
 MIT License
+
+---
+
+## 📡 关于作者 · 行途
+
+我是**行途（Justin Li）**，一线技术经理 + 仍在写代码。
+
+- 🔔 公众号 **「行途技术手记」**：微信搜索关注，看 AI 工程化落地实战
+- 💬 微信：**xingtu_note**（备注"开源"优先通过）
+- 🌐 博客 / 作品集：https://xingtu1996.github.io
+
+如果这份仓库对你有帮助，欢迎在公众号留言交流 🙌
+
