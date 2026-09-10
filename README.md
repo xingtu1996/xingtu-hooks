@@ -1,4 +1,4 @@
-***REMOVED*** XingTu Hooks · Claude Code 钩子集合
+# XingTu Hooks · Claude Code 钩子集合
 
 > 开箱即用的 Agent 钩子（hooks），覆盖安全拦截 / 会话提醒 / 交付检视。
 
@@ -6,15 +6,15 @@
 ![Hooks](https://img.shields.io/badge/hooks-5-blue.svg)
 ![Target](https://img.shields.io/badge/target-Claude%20Code-orange.svg)
 
-***REMOVED******REMOVED*** 这是什么
+## 这是什么
 
 `xingtu-hooks` 是行途开源矩阵的**钩子资产仓**。聚合 AI 工程实践中打磨的 Claude Code hooks，按场景开箱即用。市面鲜有系统开源的 hooks 集合，这是差异化资产。
 
-***REMOVED******REMOVED*** 🧩 DeepSeek Harness（DSH）兼容
+## 🧩 DeepSeek Harness（DSH）兼容
 
 本仓 hooks 遵循 Claude Code 标准 hook 事件协议，DeepSeek Harness 的插件模型可消费同一类生命周期钩子（PreToolUse / PostToolUse / Stop 等），用于安全拦截、会话提醒与交付检视，无需改写。
 
-***REMOVED******REMOVED*** Hooks 清单
+## Hooks 清单
 
 | Hook | 说明 | 触发时机 |
 |------|------|---------|
@@ -23,39 +23,39 @@
 | session-start-reminder | 会话开始注入轻量工作提醒 | SessionStart |
 | stop-review-check | 停止前提醒交付检视 | Stop |
 
-***REMOVED******REMOVED*** 安装
+## 安装
 
 ```bash
-***REMOVED*** 复制到项目 .claude/hooks/
+# 复制到项目 .claude/hooks/
 cp -r hooks/<hook-name> .claude/hooks/
 
-***REMOVED*** 注册到 settings.json（示例）
-***REMOVED*** "hooks": {
-***REMOVED***   "PreToolUse": [ { "matcher": "Edit|Write", "hooks": [ { "type": "command", "command": "bash .claude/hooks/pre-tool-secret-guard/hook.sh" } ] } ],
-***REMOVED***   "SessionStart": [ { "hooks": [ { "type": "command", "command": "bash .claude/hooks/session-start-reminder/hook.sh" } ] } ],
-***REMOVED***   "Stop": [ { "hooks": [ { "type": "command", "command": "bash .claude/hooks/stop-review-check/hook.sh" } ] } ]
-***REMOVED*** }
+# 注册到 settings.json（示例）
+# "hooks": {
+#   "PreToolUse": [ { "matcher": "Edit|Write", "hooks": [ { "type": "command", "command": "bash .claude/hooks/pre-tool-secret-guard/hook.sh" } ] } ],
+#   "SessionStart": [ { "hooks": [ { "type": "command", "command": "bash .claude/hooks/session-start-reminder/hook.sh" } ] } ],
+#   "Stop": [ { "hooks": [ { "type": "command", "command": "bash .claude/hooks/stop-review-check/hook.sh" } ] } ]
+# }
 ```
 
-***REMOVED******REMOVED*** Hook 协议
+## Hook 协议
 
 - 输入：stdin JSON（含 `tool_name` / `tool_input` 等）
 - 输出：`{"hookSpecificOutput": {"hookEventName": "...", "decision": "block|allow", "reason": "..."}}`
 - PreToolUse 可 block/allow；SessionStart/Stop 用 `additionalContext` 注入轻量提醒（≤500B 克制）
 
-***REMOVED******REMOVED*** 设计原则
+## 设计原则
 
 - **确定性行为用 hook 强制**：模型会忘指令，hook 由 harness 执行不依赖模型记忆
 - **克制注入**：会话注入 ≤500B，不用 hook 做长文提醒
 - **安全第一**：拦截优先于放行，敏感文件一律走环境变量
 
-***REMOVED******REMOVED*** 许可证
+## 许可证
 
 MIT License
 
 ---
 
-***REMOVED******REMOVED*** 📡 关于作者 · 行途
+## 📡 关于作者 · 行途
 
 我是**行途**，一线技术经理 + 仍在写代码。
 
