@@ -1,0 +1,6 @@
+{
+  "name": "claim-guard",
+  "description": "PostToolUse(Edit|Write|MultiEdit)：写入内容命中登记表里的「断言模式」（如否定性裁决、机制性断言）时，注入三问提醒：原始依据在哪？查过还是凭印象？错了代价是什么？绝不阻断，同会话同类型只提醒一次。",
+  "trigger": "PostToolUse(Edit|Write|MultiEdit)",
+  "output": "additionalContext (non-blocking)"
+}

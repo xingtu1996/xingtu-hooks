@@ -1,0 +1,6 @@
+{
+  "name": "destructive-command-guard",
+  "description": "PreToolUse(Bash) 拦截不可逆命令：递归删除 rm -rf、git 强推/硬重置/清库、git add -A 批量暂存、磁盘级写设备。fail-open，阻断时 exit 2 并把原因回注模型。",
+  "trigger": "PreToolUse(Bash)",
+  "output": "block (exit 2, stderr) / allow (exit 0)"
+}

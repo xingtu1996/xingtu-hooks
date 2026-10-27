@@ -1,0 +1,6 @@
+{
+  "name": "session-recap",
+  "description": "Stop hook：扫描 transcript 最近窗口，提取本轮文件变更/git 提交/编译/任务完成数，生成一行 recap 展示给用户，并追加到按天归档文件供跨会话恢复。非阻断。",
+  "trigger": "Stop",
+  "output": "systemMessage (allow)"
+}

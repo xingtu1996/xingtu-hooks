@@ -1,0 +1,6 @@
+{
+  "name": "sediment-signal",
+  "description": "Stop/PreCompact：对 transcript 尾部做轻量启发式统计（用户纠偏词数、工具报错数、工具调用数），过阈值则写一张「候选技能沉淀卡」到收件箱目录。fail-open，每会话最多 1 卡，绝不阻断。",
+  "trigger": "Stop / PreCompact",
+  "output": "无 stdout（写文件 + 日志）"
+}

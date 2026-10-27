@@ -1,0 +1,6 @@
+{
+  "name": "ponytail-yagni-reminder",
+  "description": "SessionStart 注入 YAGNI / 最少代码阶梯，写任何新代码前先过七问。非阻断，纯文本注入 additionalContext。",
+  "trigger": "SessionStart(startup|resume|clear|compact)",
+  "output": "additionalContext (text)"
+}
