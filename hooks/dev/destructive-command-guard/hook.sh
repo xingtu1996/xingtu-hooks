@@ -37,12 +37,13 @@ except Exception:
 danger=""
 reason=""
 
-# ── 递归删除（rm -rf / -fr / -Rf / -r -f ...）──────────────────────
+# ── 递归删除（rm -r / -R / -rf / -fr / -Rf / --recursive ...）──────
 # 命令位置感知：行首 / ; & | 换行 反引号 $() / sudo / xargs 之后
 # 放过 git rm、npm rm 等带前缀形式；echo/grep 参数里的 "rm" 字样不拦
-if printf '%s' "$CMD" | grep -qE '(^|[;&|[:space:]`]|\$\(|\bsudo[[:space:]]+|\bxargs[[:space:]]+)[[:space:]]*rm[[:space:]]+(-[[:alnum:]]*[rR][[:alnum:]]*[[:space:]]+-[[:alnum:]]*[fF][[:alnum:]]*|-[[:alnum:]]*[fF][[:alnum:]]*[rR][[:alnum:]]*|--recursive[[:space:]]+--force|--force[[:space:]]+--recursive)'; then
+# 拦所有 rm 后接含 r/R 的选项串（不管是否带 f）；单文件 rm 不含 -r 放行
+if printf '%s' "$CMD" | grep -qE '(^|[;&|[:space:]`]|\$\(|\bsudo[[:space:]]+|\bxargs[[:space:]]+)[[:space:]]*rm[[:space:]]+(-[[:alnum:]]*[rR]|--recursive)'; then
   danger="rm"
-  reason="递归删除（rm -rf 之类）"
+  reason="递归删除（rm -r / -R / -rf 之类）"
 fi
 
 # ── 会丢历史的 git 操作 ───────────────────────────────────────────

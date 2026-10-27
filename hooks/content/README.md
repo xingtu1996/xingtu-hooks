@@ -15,5 +15,5 @@
 | pre-publish-privacy-gate | Stop / 发文前 | 检查稿子里有无真名/公司名/内网域名/密钥 | 规划中 |
 | pre-publish-ai-flavor-gate | Stop / 发文前 | 检测 AI 味（空泛口号/加粗过多/引用块过多） | 规划中 |
 
-> 这些 hook 从行途工作区的 `tools/privacy_scan.py`、`de-ai-flavor` skill、`mp-prepublish-draft-verify` 蒸馏而来。
+> 这些 hook 从实际内容生产流程的门禁实践蒸馏而来（发文前脱敏扫描、AI 味检测、发前核验）。
 > 当前基座 hooks（base/）已覆盖通用安全防护，角色专属 hooks 逐步补充。
