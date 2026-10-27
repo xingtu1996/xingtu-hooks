@@ -182,16 +182,16 @@ echo '{"hookSpecificOutput":{"hookEventName":"PreToolUse","decision":"allow"}}'
 ## 八、验证方法
 
 ```bash
-# 手动喂 JSON 测 PreToolUse 门禁
-echo '{"tool_name":"Bash","tool_input":{"command":"rm -rf foo"}}' | bash hooks/destructive-command-guard/hook.sh
+# 手动喂 JSON 测 PreToolUse 门禁（注意用 bash 调 .sh，python3 调 bash 脚本会语法报错，那是你喂错了解释器，不是 hook 的问题）
+echo '{"tool_name":"Bash","tool_input":{"command":"rm -rf foo"}}' | bash hooks/dev/destructive-command-guard/hook.sh
 echo $?   # 应为 2
 
 # 测放行
-echo '{"tool_name":"Bash","tool_input":{"command":"ls -la"}}' | bash hooks/destructive-command-guard/hook.sh
+echo '{"tool_name":"Bash","tool_input":{"command":"ls -la"}}' | bash hooks/dev/destructive-command-guard/hook.sh
 echo $?   # 应为 0
 
 # 看注入文本体积
-bash hooks/ponytail-yagni-reminder/hook.sh | wc -c
+bash hooks/base/ponytail-yagni-reminder/hook.sh | wc -c
 ```
 
 改了 settings.json 里的注册（command/matcher），**当前会话不生效，要重启会话**才加载。
@@ -206,3 +206,5 @@ bash hooks/ponytail-yagni-reminder/hook.sh | wc -c
 3. **fail-closed 过度**：hook 自己崩了就卡住所有工具调用——这是把单点故障扩大化。门禁类 hook 一律 fail-open（解析失败就放行，规则层兜底）。
 4. **同事件堆多个 hook**：每次工具调用 spawn 3 个脚本 = 3 倍延迟。合并成一个。
 5. **同会话刷屏提醒**：提醒类 hook 要做节流（同会话同类型只提醒一次），否则吵几次模型就免疫了。
+6. **正则只测了一种写法**：初版拦 `rm -rf` 的正则要求"两个分开的 flag"或"f 在前 r 在后"，结果连写的 `rm -rf`（r 在前 f 在后）漏拦——测试时喂了 `rm -rf foo/` 才发现 exit 0。**门禁正则必须测全 flag 排列组合：`-rf`/`-fr`/`-Rf`/`-fR`/`-r -f`，再测正常操作不误伤。**
+7. **自己骗自己的测试**：拿 python3 去调一个 bash 脚本，看到 SyntaxError 以为 hook 坏了——其实是喂错了解释器。测试前先看 shebang：`#!/usr/bin/env bash` 就用 bash 喂，`#!/usr/bin/env python3` 就用 python3 喂。

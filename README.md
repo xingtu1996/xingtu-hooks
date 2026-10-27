@@ -83,6 +83,22 @@ bash install.sh --role all      # 全部
 - [xingtu-skills](https://github.com/xingtu1996/xingtu-skills) — Agent Skills 库（工作流编排）
 - [harness-kit](https://github.com/xingtu1996/harness-kit) — 完整 harness 生成器（含 preset 机制）
 
+## 延伸阅读（公众号同名文章）
+
+这个仓不是凭空想出来的，是实战踩坑后的沉淀。相关文章：
+
+- **[你的 AI 护栏装了等于没装：三种静默失效](https://xingtu1996.github.io/articles/2026/10/ai-guardrail-three-silent-failures/)**（2026-10-19）——为什么写在 prompt 里的规则会"静默失效"，hook 怎么补这个洞
+- **[我说了句「改吧」，AI 就不按规矩来了？](https://xingtu1996.github.io/articles/2026/10/two-words-bypass-process/)**（2026-10-20）——口头同意 ≠ 流程已通过，规则当天沉淀当天被违反的真实案例
+- **[AI 失忆不是 bug，是架构](https://xingtu1996.github.io/articles/2026/10/ai-forgetfulness-is-architecture/)**（2026-10-15）——长上下文里规则为什么被稀释
+- **[代码写得飞快，交付还是慢：70+ 企业的四道质量门禁](https://xingtu1996.github.io/articles/2026/10/four-quality-gates/)**（2026-10-26）——质量门禁怎么从"靠人记得"变成"靠结构拦"
+
+## 维护者工具
+
+```bash
+# 定期跑这个，对比上游实战源和开源仓，列出该同步的差异
+bash scripts/audit-upstream.sh
+```
+
 ## 许可证
 
 MIT License
