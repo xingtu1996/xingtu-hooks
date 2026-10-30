@@ -85,7 +85,7 @@ bash install.sh --role all      # 全部
 
 ## 延伸阅读
 
-这个仓不是凭空想出来的，是实战踩坑后的沉淀。公众号"行途技术"已发布的相关文章：
+这个仓不是凭空想出来的，是实战踩坑后的沉淀。公众号「行途技术手记」已发布的相关文章：
 
 - **《你的 AI 护栏装了等于没装：三种静默失效》**（2026-10-19）——本仓的"母文"。讲透软约束（prompt 里的规矩，概率遵守）vs 硬约束（hook，机制层直接拦），附三种静默失效路径、30 秒自测表、NIST/OpenAI/CERT-In 前沿背书。归档见 [xingtu-articles](https://github.com/xingtu1996/xingtu-articles/blob/main/articles/2026/10/2026-10-19-ai-guardrail-three-silent-failures.md)
 - **《AI 失忆不是 bug，是架构》**（2026-10-15）——CLAUDE.md 作为记忆机制，为什么长上下文里规则会被稀释
